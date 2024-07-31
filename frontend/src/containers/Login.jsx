@@ -66,11 +66,12 @@ const Login = () => {
   };
 
   return (
-    <div className="bg-gradient full-height">
-      <div className="align-items-stretch border border-40 row overflow-hidden register-background ">
+    <>
+    <div className="bgs-gradient "> </div>
+      <div className=" border border-40 r-row row ">
         {/* <div className="container d-flex justify-content-center align-items-center vh-100"> */}
 
-        <div className="col-md-6 d-md-flex d-none white-box pt-5 pb-5 pright pleft d-flex align-items-center justify-content-center flex-column">
+        <div className="col-md-6 d-md-flex  white-box pt-5 pb-5  d-flex align-items-center justify-content-center flex-column">
           <svg
             className="pb-3"
             xmlns="http://www.w3.org/2000/svg"
@@ -87,17 +88,16 @@ const Login = () => {
           </h2>
           <p className=" text-center">Sign in to manage your account</p>
         </div>
-        <div className="col-md-6  pt-5 pb-5 pright pleft blue-box">
+        <div className="col-md-6  pt-5 pb-5  blue-box">
           <h2 className="text-center mb-4">Login</h2>
           <form onSubmit={handleSubmit} className="r-form">
             <div className="mb-3">
-              <label htmlFor="email" className="form-label">
-                Email:
-              </label>
+              
               <input
                 type="email"
                 id="email"
                 name="email"
+                placeholder="email"
                 value={email}
                 onChange={handleChange}
                 className="form-control"
@@ -105,13 +105,12 @@ const Login = () => {
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="password" className="form-label">
-                Password:
-              </label>
+             
               <input
                 type="password"
                 id="password"
                 name="password"
+                placeholder="password"
                 value={password}
                 onChange={handleChange}
                 className="form-control"
@@ -133,8 +132,8 @@ const Login = () => {
         {/* Toast Container */}
         <ToastContainer />
       </div>
-    </div>
-    // </div>
+      </>
+  
   );
 };
 

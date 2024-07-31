@@ -18,3 +18,11 @@
 .bg-green{
     background-color: rgb(195, 219, 215);
 }
+@media only screen and (max-width: 1200px) 
+{
+    
+
+.f-wrap{
+    flex-direction: column;
+}
+}

@@ -4,6 +4,7 @@ import Table from "./Tables/Table";
 import Donut from "./Donut";
 import AreaChart from "./AreaChart";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import '../styles/card.css';
 
 const Card = ({ Toggle }) => {
   const [counts, setCounts] = useState({ sales: 0, purchases: 0, products: 0 });
@@ -71,7 +72,7 @@ const Card = ({ Toggle }) => {
           <div className="row g-3 my-2">
             <div className="col-lg-3">
               <div className="pt-4 pb-4 ps-4 bg-white d-flex flex-column gap-4 shadow-sm rounded">
-                <div className="d-flex justify-content-start align-items-start gap-3 flex-wrap">
+                <div className="d-flex justify-content-start align-items-start gap-3 flex-wrap f-wrap">
                   <i
                     className="bi bi-cash-coin  d-flex align-items-center justify-content-center"
                     style={{
@@ -103,7 +104,7 @@ const Card = ({ Toggle }) => {
             </div>
             <div className="col-lg-3">
               <div className="pt-4 pb-4 ps-4 bg-white d-flex flex-column gap-4 shadow-sm rounded">
-                <div className="d-flex justify-content-start align-items-start gap-3 flex-wrap">
+                <div className="d-flex justify-content-start align-items-start gap-3 flex-wrap f-wrap">
                   <i
                     className="bi bi-currency-dollar  d-flex align-items-center justify-content-center"
                     style={{
@@ -135,7 +136,7 @@ const Card = ({ Toggle }) => {
             </div>
                <div className="col-lg-3">
               <div className="pt-4 pb-4 ps-4 bg-white d-flex flex-column gap-4 shadow-sm rounded">
-                <div className="d-flex justify-content-start align-items-start gap-3 flex-wrap">
+                <div className="d-flex justify-content-start align-items-start gap-3 flex-wrap f-wrap">
                   <i
                     className="bi bi-currency-dollar  d-flex align-items-center justify-content-center"
                     style={{
@@ -168,7 +169,7 @@ const Card = ({ Toggle }) => {
            
             <div className="col-lg-3">
               <div className="pt-4 pb-4 ps-4 bg-white d-flex flex-column gap-4 shadow-sm rounded">
-                <div className="d-flex justify-content-start align-items-start gap-3 flex-wrap">
+                <div className="d-flex justify-content-start align-items-start gap-3 flex-wrap f-wrap">
                   <i
                     className="bi bi-truck  d-flex align-items-center justify-content-center"
                     style={{
@@ -200,7 +201,7 @@ const Card = ({ Toggle }) => {
             </div>
            
             <div className="col-lg-6"  >
-                      <div className="shadow-sm rounded" style={{
+                      <div className="shadow-sm rounded  overflow-auto" style={{
                      
                      background: "#fff",
                     
@@ -216,7 +217,7 @@ const Card = ({ Toggle }) => {
              
             </div>
             <div className="col-lg-6" >
-            <div className="shadow-sm rounded" style={{
+            <div className="shadow-sm rounded  overflow-auto" style={{
                      
                      background: "#fff",
                     
@@ -231,7 +232,7 @@ const Card = ({ Toggle }) => {
                  /></div>
             </div>
             <div className="col-lg-6">
-            <div className="shadow-sm rounded" style={{
+            <div className="shadow-sm rounded " style={{
                      
                      background: "#fff",
                     
@@ -243,7 +244,7 @@ const Card = ({ Toggle }) => {
               <AreaChart /></div>
             </div>
             <div className="col-lg-6">
-            <div className="shadow-sm rounded" style={{
+            <div className="shadow-sm rounded " style={{
                      
                      background: "#fff",
                     

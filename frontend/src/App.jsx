@@ -18,7 +18,7 @@ import Supplier from './containers/Supplier';
 import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
 import './App.css';
-import { useConditionalStyles } from './containers/ConditionalStyles'; 
+
 const App = () => {
   const [toggle, setToggle] = useState(true);
 
@@ -39,7 +39,7 @@ const App = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-  useConditionalStyles(); 
+ 
   return (
     <Router>
       <AuthProvider>
@@ -56,8 +56,8 @@ const MainContent = ({ toggle, Toggle }) => {
   const hideSidebarAndNavbar = location.pathname === '/login' || location.pathname === '/register';
 
   return (
-    <div className="container-lg container-xl container-fluid-md container-fluid-sm container-fluid mt-5 bg-white p-0 rounded overflow-hidden">
-      <div className="row l-grey rounded overflow-hidden">
+    <div className="container-lg container-xl container-fluid-md container-fluid-sm container-fluid mt-4 mb-4 bg-white p-0 rounded overflow-hidden c-container">
+      <div className="row l-grey rounded border-40 overflow-hidden">
         {!hideSidebarAndNavbar && toggle && (
           <div className="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-12 p-0 rounded bg-white" >
             <Sidebar />
