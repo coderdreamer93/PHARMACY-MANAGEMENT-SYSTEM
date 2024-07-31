@@ -24,9 +24,9 @@ const Navbar = ({ Toggle }) => {
 
   return (
     <>
-      <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <nav class="navbar navbar-expand-lg navbar-light bg-white ">
         {/* <div className="container-fluid"> */}
-        <i className="navbar-brand bi bi-justify-left" onClick={Toggle}></i>
+        <i className="navbar-brand bi bi-justify-left ms-3" onClick={Toggle}></i>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className=""></span>
           {/* <span className="nav-link m-1">{user.name}</span> */}
@@ -46,7 +46,7 @@ const Navbar = ({ Toggle }) => {
             {/* <img src={userLogo} alt="" /> */}
             {user ? (
 
-              <span className="nav-link m-1">Welcome to {user.username}</span>
+              <span className="nav-link m-1 pe-3">Welcome to {user.username}</span>
             ) : (
               <Link to="/login" className="nav-link m-1">Login</Link>
             )

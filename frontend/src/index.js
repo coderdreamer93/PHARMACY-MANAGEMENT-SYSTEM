@@ -20,9 +20,9 @@ import Inventory from "./containers/Inventory";
 import { createRoot } from "react-dom/client";
 import { AuthProvider } from "./containers/AuthContext";
 
-if (!process.env.REACT_APP_CLERK_PUBLISHABLE_KEY) {
-  throw new Error("Missing Publishable Key");
-}
+// if (!process.env.REACT_APP_CLERK_PUBLISHABLE_KEY) {
+//   throw new Error("Missing Publishable Key");
+// }
 
 // Import your publishable key
 // const clerkPubKey = process.env.REACT_APP_CLERK_PUBLISHABLE_KEY;

@@ -1,8 +1,16 @@
 
-.full-height {
-    height: 100vh;
+
+body {
+    background: #87ceeb59;
+    /* background-image: url(../assests/bgblue.jpg)!important; */
+    background-position: center;
+
+    background-size: cover;
+    background-repeat: repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  
   .bg-gradient {
     background-image: url(../assests/bgblue.jpg)!important;
     background-position: center;
@@ -12,13 +20,19 @@
     background-size: cover;
     background-repeat: no-repeat;
   }
- 
+ .l-grey{
+    background: #dfdfdf69;
+ }
+
 .white-box {
   background-color: skyblue;
   color: #000;
 }
 .border-40 {
   border-radius: 40px;
+}
+.fs-12{
+    font-size:12px;
 }
 .blue-box {
     background: rgb(255 255 255 );

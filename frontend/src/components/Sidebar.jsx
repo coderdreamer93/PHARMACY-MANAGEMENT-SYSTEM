@@ -45,10 +45,10 @@ const Sidebar = () => {
     return (
         <>
 
-            <div className="container-fluid">
-                <div className="row">
+            <div className="container-fluid p-0">
+                <div className="">
                     {toggle && (
-                        <div className="col-2">
+                        <div className=" p-0" >
                             <div className="sidebar p-2" style={{}}>
                                 {/* <BiCube className="bi my-1 me-2 fs-3" /> */}
                                 <div className='text-center m-3'>

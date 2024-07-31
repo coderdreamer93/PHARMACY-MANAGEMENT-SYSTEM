@@ -18,7 +18,7 @@ import Supplier from './containers/Supplier';
 import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
 import './App.css';
-
+import { useConditionalStyles } from './containers/ConditionalStyles'; 
 const App = () => {
   const [toggle, setToggle] = useState(true);
 
@@ -39,7 +39,7 @@ const App = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-
+  useConditionalStyles(); 
   return (
     <Router>
       <AuthProvider>
@@ -56,20 +56,20 @@ const MainContent = ({ toggle, Toggle }) => {
   const hideSidebarAndNavbar = location.pathname === '/login' || location.pathname === '/register';
 
   return (
-    <div className="container-fluid">
-      <div className="row">
+    <div className="container-lg container-xl container-fluid-md container-fluid-sm container-fluid mt-5 bg-white p-0 rounded overflow-hidden">
+      <div className="row l-grey rounded overflow-hidden">
         {!hideSidebarAndNavbar && toggle && (
-          <div className="col-2 vh-100">
+          <div className="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-12 p-0 rounded bg-white" >
             <Sidebar />
           </div>
         )}
-        <div className={toggle && !hideSidebarAndNavbar ? 'col-10' : 'col-12 p-0'}>
+        <div className={toggle && !hideSidebarAndNavbar ? 'col-lg-10 col-lg-10 col-md-8 col-sm-8 col-12 p-0 ' : 'col-12 p-0 '}>
           {!hideSidebarAndNavbar && <Navbar Toggle={Toggle} />}
           <UserProvider>
             <Routes>
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
-              <Route element={<ProtectedRoute />}>
+              {/* <Route element={<ProtectedRoute />}> */}
                 <Route path="/dashboard" element={<Dashboard />}  />
                 <Route path="/customer" element={<Customer />} />
                 <Route path="/sales" element={<Sales />} />
@@ -77,7 +77,7 @@ const MainContent = ({ toggle, Toggle }) => {
                 <Route path="/purchase" element={<Purchase />} />
                 <Route path="/supplier" element={<Supplier />} />
                 <Route path="/products" element={<Supplier />} />
-              </Route>
+              {/* </Route> */}
               <Route path="*" element={<Navigate to="/login" />} />
             </Routes>
           </UserProvider>

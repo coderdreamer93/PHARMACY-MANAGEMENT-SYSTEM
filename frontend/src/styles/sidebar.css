@@ -1,6 +1,10 @@
+* {
+    box-sizing: border-box;
+}
+
 .list-group a {
 
-    background-color: lightblue;
+    background-color: transparent;
     color: black;
     cursor: pointer;
 }
@@ -27,18 +31,18 @@
 /* Body styles */
 body {
     font-family: 'Arial', sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 /* Sidebar styles */
 .sidebar {
-    background-color: skyblue;
+    background-color: #fff;
     /* Sidebar background color */
-    width: 17vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
+height: 100%;
     overflow: auto;
-    left: 0;
+
     /* Adjust the radius as needed */
 
 }
