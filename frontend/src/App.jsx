@@ -69,7 +69,7 @@ const MainContent = ({ toggle, Toggle }) => {
             <Routes>
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
-              {/* <Route element={<ProtectedRoute />}> */}
+              <Route element={<ProtectedRoute />}>
                 <Route path="/dashboard" element={<Dashboard />}  />
                 <Route path="/customer" element={<Customer />} />
                 <Route path="/sales" element={<Sales />} />
@@ -77,7 +77,7 @@ const MainContent = ({ toggle, Toggle }) => {
                 <Route path="/purchase" element={<Purchase />} />
                 <Route path="/supplier" element={<Supplier />} />
                 <Route path="/products" element={<Supplier />} />
-              {/* </Route> */}
+              </Route>
               <Route path="*" element={<Navigate to="/login" />} />
             </Routes>
           </UserProvider>
