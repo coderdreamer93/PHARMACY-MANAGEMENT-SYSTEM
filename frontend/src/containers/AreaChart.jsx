@@ -77,9 +77,9 @@ const StackedChart = () => {
     };
 
     return (
-        <div style={{ padding: '10px' ,borderRadius:"10px"}}>
+        <div style={{ padding: '10px' ,borderRadius:"10px" , }}>
            
-                <Chart options={options} series={series} type="bar"   />
+                <Chart options={options} series={series} type="bar" height="400px"  />
           
         </div>
     );

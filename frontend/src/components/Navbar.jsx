@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import 'bootstrap/js/dist/dropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 // import avatarImage from '../assests/avatarImg.png';
 import { Link } from 'react-router-dom';
 import { useUser } from '../containers/UserContext';
@@ -24,11 +25,11 @@ const Navbar = ({ Toggle }) => {
 
   return (
     <>
-      <nav class="navbar navbar-expand-lg navbar-light bg-white ">
+      <nav class="navbar navbar-expand-lg  bg-white ">
         {/* <div className="container-fluid"> */}
         <i className="navbar-brand bi bi-justify-left ms-3" onClick={Toggle}></i>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span className=""></span>
+        <button className="navbar-toggler m-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
           {/* <span className="nav-link m-1">{user.name}</span> */}
 
           {/* <UserButton /> */}

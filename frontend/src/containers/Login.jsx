@@ -68,9 +68,8 @@ const Login = () => {
   return (
     <>
     <div className="bgs-gradient "> </div>
-      <div className=" border border-40 r-row row ">
-        {/* <div className="container d-flex justify-content-center align-items-center vh-100"> */}
-
+      <div className=" custom-box ">
+    <div className="wrap">
         <div className="col-md-6 d-md-flex  white-box pt-5 pb-5  d-flex align-items-center justify-content-center flex-column">
           <svg
             className="pb-3"
@@ -131,6 +130,7 @@ const Login = () => {
 
         {/* Toast Container */}
         <ToastContainer />
+      </div>
       </div>
       </>
   

@@ -53,7 +53,7 @@ const Sidebar = () => {
                                 {/* <BiCube className="bi my-1 me-2 fs-3" /> */}
                                 <div className='text-center m-3'>
                                     <img src={logo} alt="Logo" width={100} height={100} />
-                                    <span className="brand-name fs-4">PHARMACIST</span>
+                                    <span className="brand-name ">PHARMACIST</span>
                                 </div>
                                 <hr className="text-dark" />
                                 <div className="list-group list-group-flush">

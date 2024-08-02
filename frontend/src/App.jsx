@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'r
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap/js/dist/dropdown';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Dashboard from './containers/Dashboard';
 import Customer from './containers/Customer';
@@ -56,8 +57,8 @@ const MainContent = ({ toggle, Toggle }) => {
   const hideSidebarAndNavbar = location.pathname === '/login' || location.pathname === '/register';
 
   return (
-    <div className="container-lg container-xl container-fluid-md container-fluid-sm container-fluid mt-4 mb-4 bg-white p-0 rounded overflow-hidden c-container">
-      <div className="row l-grey rounded border-40 overflow-hidden">
+    <div className="container-lg container-xl container-fluid-md container-fluid-sm container-fluid mt-4 mb-4 bg-white c-container">
+      <div className="row l-grey rounded border-40 ">
         {!hideSidebarAndNavbar && toggle && (
           <div className="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-12 p-0 rounded bg-white" >
             <Sidebar />
@@ -69,7 +70,7 @@ const MainContent = ({ toggle, Toggle }) => {
             <Routes>
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
-              <Route element={<ProtectedRoute />}>
+              {/* <Route element={<ProtectedRoute />}> */}
                 <Route path="/dashboard" element={<Dashboard />}  />
                 <Route path="/customer" element={<Customer />} />
                 <Route path="/sales" element={<Sales />} />
@@ -77,7 +78,7 @@ const MainContent = ({ toggle, Toggle }) => {
                 <Route path="/purchase" element={<Purchase />} />
                 <Route path="/supplier" element={<Supplier />} />
                 <Route path="/products" element={<Supplier />} />
-              </Route>
+              {/* </Route> */}
               <Route path="*" element={<Navigate to="/login" />} />
             </Routes>
           </UserProvider>
