@@ -33,9 +33,15 @@ const Purchase = () => {
         <>
             <div className="main-content container-fluid px-4">
                 <div className="row mt-4">
-                    <div className="col">
-                        <table className="table table-hover table-bordered text-center">
-                            <thead className='table-info'>
+                    <div className="col table-responsive rounded p-3 border bg-white">
+                    <div className='d-flex gap-2 pb-4'>
+                        <input type="text" name="" className='seacrh-input flex-fill' placeholder="Search"/>
+                        <Button variant="info border-rounded" className='addItem-button'  >+ Add Item</Button>
+                        </div>
+                      
+                        <h2 className='pb-4'>Purchase</h2>
+                        <table className="table ">
+                            <thead className=''>
                                 <tr>
                                     <th>Product Name</th>
                                     <th>Category</th>

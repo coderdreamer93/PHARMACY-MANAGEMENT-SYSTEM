@@ -88,10 +88,15 @@ const Inventory = ({ Toggle }) => {
         <>
             <div className="main-content container-fluid px-4">
                 <div className="row mt-4">
-                    <div className="col">
-                        {/* <h2>Inventory</h2> */}
-                        <table className="table table-hover table-bordered text-center">
-                            <thead className='table-info'>
+                    <div className="col table-responsive rounded p-3 border bg-white">
+                        <div className='d-flex gap-2 pb-4'>
+                        <input type="text" name="" className='seacrh-input flex-fill' placeholder="Search"/>
+                        <Button variant="info border-rounded" className='addItem-button' onClick={handleOpenModal} >+ Add Item</Button>
+                        </div>
+                      
+                        <h2 className='pb-4'>Inventory</h2>
+                        <table className="table  ">
+                            <thead className=''>
                                 <tr>
                                     <th>Product Name</th>
                                     <th>Category</th>
@@ -121,7 +126,7 @@ const Inventory = ({ Toggle }) => {
                                 ))}
                             </tbody>
                         </table>
-                        <Button variant="info border-rounded" onClick={handleOpenModal}>Add Item</Button>
+                       
                     </div>
                 </div>
 

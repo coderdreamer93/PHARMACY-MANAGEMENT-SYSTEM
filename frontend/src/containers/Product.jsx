@@ -4,7 +4,7 @@ import Sidebar from '../components/Sidebar'
 const Product = () => {
     return (
         <>
-            <Sidebar />
+        
             <div>
                 Products
             </div>

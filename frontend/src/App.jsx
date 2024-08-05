@@ -16,6 +16,7 @@ import ProtectedRoute from './ProtectedRoute';
 import { AuthProvider } from './containers/AuthContext';
 import Purchase from './containers/Purchase';
 import Supplier from './containers/Supplier';
+import Product from './containers/Product';
 import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
 import './App.css';
@@ -77,7 +78,7 @@ const MainContent = ({ toggle, Toggle }) => {
                 <Route path="/inventories" element={<Inventory />} />
                 <Route path="/purchase" element={<Purchase />} />
                 <Route path="/supplier" element={<Supplier />} />
-                <Route path="/products" element={<Supplier />} />
+                <Route path="/products" element={<Product />} />
               {/* </Route> */}
               <Route path="*" element={<Navigate to="/login" />} />
             </Routes>

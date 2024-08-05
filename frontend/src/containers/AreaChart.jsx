@@ -28,6 +28,17 @@ const StackedChart = () => {
             },
             background: '#fff' 
         },
+        responsive: [{
+            breakpoint: 480,
+            options: {
+              legend: {
+                position: 'bottom',
+                offsetX: -10,
+                offsetY: 0
+              }
+            }
+          }],
+       
         plotOptions: {
             bar: {
                 horizontal: false,
@@ -79,7 +90,7 @@ const StackedChart = () => {
     return (
         <div style={{ padding: '10px' ,borderRadius:"10px" , }}>
            
-                <Chart options={options} series={series} type="bar" height="400px"  />
+                <Chart options={options} series={series} type="bar"   />
           
         </div>
     );
