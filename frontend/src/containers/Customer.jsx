@@ -17,7 +17,7 @@ const Customer = () => {
                         </div>
                       
                         <h2 className='pb-4'>Customer</h2>
-                        <table className="table">
+                        <table className="table  table-striped table-hover">
                             <thead className=''>
                                 <tr>
                                     <th className='text-center'>Name</th>

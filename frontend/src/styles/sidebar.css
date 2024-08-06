@@ -18,9 +18,13 @@
 
 .list-group a:hover {
 
-    background-color: white;
-    color: black;
-    cursor: pointer;
+    background: #17a2b8;
+    color: #fff;
+}
+.list-group-item.active {
+    background-color: #17a2b8;
+    color: white;
+    border: none;
 }
 
 /* Reset some default styles */

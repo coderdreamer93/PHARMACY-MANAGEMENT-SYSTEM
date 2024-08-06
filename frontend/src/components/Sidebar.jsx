@@ -41,6 +41,9 @@ const Sidebar = () => {
         // Redirect to login page
         window.location.href = '/login';
     };
+    const isActive = (path) => {
+        return location.pathname === path ? 'active' : '';
+    };
 
     return (
         <>
@@ -57,7 +60,7 @@ const Sidebar = () => {
                                 </div>
                                 <hr className="text-dark" />
                                 <div className="list-group list-group-flush">
-                                    <Link to='/dashboard' className="list-group-item list-group-item-action d-flex align-items-center mb-2 py-2">
+                                    <Link to='/dashboard' className={`list-group-item list-group-item-action d-flex align-items-center mb-2 py-2 ${isActive('/dashboard')}`}>
                                         <MdOutlineDashboard className="bi my-1 me-2 fs-5" />
                                         <span>Dashboard</span>
                                     </Link>
@@ -65,36 +68,36 @@ const Sidebar = () => {
                     <BiPurchaseTag className="fs-5 me-2 my-1 bi" />
                     <span >Warehouse</span>
                 </Link> */}
-                                    <Link to='/inventories' className="list-group-item list-group-item-action d-flex align-items-center mb-2 ">
+                                    <Link to='/inventories' className={`list-group-item list-group-item-action d-flex align-items-center mb-2 ${isActive('/inventories')}`}>
                                         <BiArchive className='bi my-1 me-2 fs-5' />
                                         <span >Inventory</span>
                                     </Link>
-                                    <Link to='/sales' className="list-group-item list-group-item-action d-flex align-items-center mb-2 ">
+                                    <Link to='/sales' className={`list-group-item list-group-item-action d-flex align-items-center mb-2 ${isActive('/sales')}`}>
                                         <BiLogoProductHunt className="bi-outline my-1 me-2 fs-5" />
                                         <span >Sales</span>
                                     </Link>
 
-                                    <Link to='/purchase' className="list-group-item list-group-item-action d-flex align-items-center mb-2 ">
+                                    <Link to='/purchase' className={`list-group-item list-group-item-action d-flex align-items-center mb-2 ${isActive('/purchase')}`}>
                                         <BiShoppingBag className="fs-5 me-2 my-1" />
                                         <span >Purchase</span>
                                     </Link>
-                                    <Link to='/customer' className="list-group-item list-group-item-action d-flex align-items-center mb-2 ">
+                                    <Link to='/customer' className={`list-group-item list-group-item-action d-flex align-items-center mb-2 ${isActive('/customer')}`}>
                                         <BiCart className='bi my-1 me-2 fs-5' />
                                         <span>Customer</span>
                                     </Link>
-                                    <Link to='/supplier' className="list-group-item list-group-item-action d-flex align-items-center mb-2 ">
+                                    <Link to='/supplier' className={`list-group-item list-group-item-action d-flex align-items-center mb-2 ${isActive('/supplier')}`}>
                                         <BiCart className='bi my-1 me-2 fs-5' />
                                         <span>Supplier</span>
                                     </Link>
-                                    <Link to='/products' className="list-group-item list-group-item-action d-flex align-items-center mb-2 ">
+                                    <Link to='/products' className={`list-group-item list-group-item-action d-flex align-items-center mb-2 ${isActive('/products')}`}>
                                         <BiCart className='bi my-1 me-2 fs-5' />
                                         <span>Product</span>
                                     </Link>
-                                    <Link to='/setting' className="list-group-item list-group-item-action d-flex align-items-center mb-2 ">
+                                    <Link to='/setting' className={`list-group-item list-group-item-action d-flex align-items-center mb-2 ${isActive('/setting')}`}>
                                         <BiPackage className="fs-5 me-2 my-1" />
                                         <span>Setting</span>
                                     </Link>
-                                    <Link to='/login' className="list-group-item list-group-item-action d-flex align-items-center mb-2 " onClick={handleLogout}><BiPackage className="fs-5 me-2 my-1" />    <span>Logout</span></Link>
+                                    <Link to='/login' className={`list-group-item list-group-item-action d-flex align-items-center mb-2 ${isActive('/login')}`} onClick={handleLogout}><BiPackage className="fs-5 me-2 my-1" />    <span>Logout</span></Link>
 
 
                                     {/* <Link to='piechart' className="list-group-item list-group-item-action d-flex align-items-center mb-2 ">
