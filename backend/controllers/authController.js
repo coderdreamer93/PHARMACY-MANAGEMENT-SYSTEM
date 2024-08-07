@@ -11,7 +11,7 @@ const JWT_REFRESH_SECRET = process.env.JWT_REFRESH_SECRET || 'refresh@noman@1234
 // REGISTER USER
 exports.register = async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { email, username, password } = req.body;
 
     // Check if email is provided
     if (!email || !password) {
@@ -30,7 +30,9 @@ exports.register = async (req, res) => {
     // Create a new user
     const newUser = await User.create({
       email,
+      username,
       password: hashedPassword,
+
     });
 
     // Generate token
@@ -42,6 +44,7 @@ exports.register = async (req, res) => {
       token,
       user: {
         _id: newUser._id,
+        username: newUser.username,
         email: newUser.email,
       },
     });
@@ -101,6 +104,7 @@ exports.login = async (req, res) => {
       user: {
         _id: user._id,
         email: user.email,
+        username: user.username,  // Include the username in the response
         // Include any other necessary user details here
       },
     });
