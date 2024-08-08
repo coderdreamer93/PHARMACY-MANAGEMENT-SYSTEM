@@ -7,7 +7,7 @@ import { MdOutlineDashboard } from 'react-icons/md';
 import { FaUserFriends } from 'react-icons/fa'
 // import { UserButton } from "@clerk/clerk-react";
 import Navbar from './Navbar';
-import logo from '../assests/pharmacy_logo2.jpg'; // Import the image file
+import logo from '../assests/pharmacy_logo3.jpg'; // Import the image file
 
 import { useAuth } from '../containers/AuthContext';
 import Cookies from 'js-cookie';

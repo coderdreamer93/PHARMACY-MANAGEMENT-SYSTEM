@@ -24,9 +24,15 @@ const Inventory = ({ Toggle }) => {
   }, []);
 
   const fetchInventory = async () => {
+    const token = localStorage.getItem("token");
     try {
       const response = await axios.get(
-        "http://localhost:8080/api/v1/inventories/inventories"
+        "http://localhost:8080/api/v1/inventories/inventories",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`, // Include token in the headers
+          },
+        }
       );
       setInventory(response.data);
     } catch (error) {
@@ -35,9 +41,15 @@ const Inventory = ({ Toggle }) => {
   };
 
   const fetchProductNames = async () => {
+    const token = localStorage.getItem("token"); 
     try {
       const response = await axios.get(
-        "http://localhost:8080/api/v1/sales/sales"
+        "http://localhost:8080/api/v1/sales/sales",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`, // Include token in the headers
+          },
+        }
       );
       const productNames = response.data.map((sale) => sale.productName);
       setProductNames([...new Set(productNames)]); // Remove duplicates
@@ -72,10 +84,16 @@ const Inventory = ({ Toggle }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const token = localStorage.getItem("token");
     try {
       await axios.post(
         "http://localhost:8080/api/v1/inventories/inventories",
-        formData
+        formData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`, // Include token in the headers
+          },
+        }
       );
       fetchInventory();
       setShowModal(false); // Close modal after successful submission

@@ -46,6 +46,7 @@ const Login = () => {
       if (response.ok) {
         login(data.token);
         updateUser(data.user); // Update user context with user details
+        localStorage.setItem("token", data.token);
 
         console.log("Login successful:", data);
         // Show toast notification
