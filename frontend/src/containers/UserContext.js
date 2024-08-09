@@ -4,8 +4,12 @@ import React, { createContext, useContext, useState } from 'react';
 const UserContext = createContext();
 
 // Create a custom hook to consume the UserContext
-export const useUser = () => useContext(UserContext);
-
+// export const useUser = () => useContext(UserContext);
+export const useUser = () => {
+  const context = useContext(UserContext);
+  console.log("useUser context:", context); // Debugging statement
+  return context;
+};
 // Create the UserProvider component
 export const UserProvider = ({ children }) => {
   // Define your user state and any related functions

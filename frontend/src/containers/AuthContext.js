@@ -1,5 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
+import { useUser } from './UserContext';
+
 
 const AuthContext = createContext();
 
@@ -10,14 +12,18 @@ export const AuthProvider = ({ children }) => {
     username: null
   });
 
+  const { updateUser } = useUser();
+
   const login = async (email, password) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', { email, password });
+      const response = await axios.post('http://localhost:8080/api/auth/login', { email, password });
+      const user = response.data.user; // Assuming the user data is in response.data.user
       setAuth({
         accessToken: response.data.token,
         refreshToken: response.data.refreshToken,
-        // username: response.data.user.username, // Store username from response if available
+        username: user.username // Store username from response
       });
+      updateUser(user); // Update user context
     } catch (error) {
       console.error('Login failed:', error.response.data);
     }
@@ -25,7 +31,7 @@ export const AuthProvider = ({ children }) => {
 
   const refreshToken = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/token', { token: auth.refreshToken });
+      const response = await axios.post('http://localhost:8080/api/auth/token', { token: auth.refreshToken });
       setAuth(prevState => ({ ...prevState, accessToken: response.data.accessToken }));
     } catch (error) {
       console.error('Token refresh failed:', error.response.data);
@@ -34,8 +40,10 @@ export const AuthProvider = ({ children }) => {
 
   const logout = async () => {
     try {
-      await axios.post('http://localhost:5000/api/auth/logout', { token: auth.refreshToken });
+      await axios.post('http://localhost:8080/api/auth/logout', { token: auth.refreshToken });
       setAuth({ accessToken: null, refreshToken: null });
+      updateUser(null);
+
     } catch (error) {
       console.error('Logout failed:', error.response.data);
     }
@@ -57,3 +65,4 @@ export const AuthProvider = ({ children }) => {
 export const useAuth = () => {
   return useContext(AuthContext);
 };
+
